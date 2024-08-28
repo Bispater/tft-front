@@ -1,0 +1,101 @@
+.div_main {
+    background-color: #f8f9fa; // Fondo claro
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  #div_resources {
+    .box_info {
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: #ffffff; // Fondo blanco para las tarjetas
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .img_box {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 150px;
+  
+        .blackout {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.188);
+        }
+      }
+  
+      .div_dwnl {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+  
+        p {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          white-space: pre-line;
+        }
+  
+        button {
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          font-size: 1rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  
+  // Responsivo
+  @media (max-width: 768px) {
+    .box_info {
+      .img_box {
+        height: 100px;
+      }
+  
+      .div_dwnl {
+        p {
+          font-size: 1rem;
+        }
+  
+        button {
+          font-size: 0.9rem;
+          padding: 0.4rem 0.8rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box_info {
+      .img_box {
+        height: 80px;
+      }
+  
+      .div_dwnl {
+        p {
+          font-size: 0.9rem;
+        }
+  
+        button {
+          font-size: 0.8rem;
+          padding: 0.3rem 0.6rem;
+        }
+      }
+    }
+  }
+  

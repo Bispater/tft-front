@@ -1,0 +1,22 @@
+
+  <main class="div_main">
+
+    <div id="div_resources" class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mt-4" *ngFor="let resource of resources">
+          <mat-card class="box_info">
+            <div class="img_box" [ngStyle]="{'background-image': 'url(' + resource.img + ')'}">
+              <div class="blackout"></div>
+            </div>
+            <mat-card-content class="div_dwnl">
+              <p class="title_down">{{ resource.title }}</p>
+              <button mat-button (click)="downloadPDF(resource.file)">
+                <img src="../../../assets/imgdownloa.svg" alt="Descripción de la imagen" class="img-fluid">
+              </button>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </main>
+  

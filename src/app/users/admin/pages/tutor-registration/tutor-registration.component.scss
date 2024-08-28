@@ -1,0 +1,38 @@
+.table-container {
+    margin: 20px;
+    padding: 5%;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .search-bar {
+    height: 70px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 15px;
+    background-color: rgba(212, 217, 215, 0.224);
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-cell, .mat-header-cell {
+    text-align: left;
+  }
+  
+  mat-icon-button {
+    margin: 0 5px;
+  }
+  

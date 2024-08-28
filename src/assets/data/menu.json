@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Inscripciones",
+        "redirect": "/Inscriptions"
+    },
+    {
+        "name": "Recursos",
+        "redirect": "/Resources"
+    },
+    {
+        "name": "Tutores/Cotutores",
+        "redirect": "/tutor-registration"
+    }
+
+]

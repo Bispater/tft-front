@@ -1,0 +1,54 @@
+<mat-toolbar style="background-color: #163251; color: white;">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="logo">
+    <img src="../../../assets/logo_tims.png" alt="Logo" style="width: 90px;">
+  </div>
+  <span class="example-spacer"></span>
+  <nav class="nav-links">
+    <a class="header-titles" *ngFor="let menu of menus" mat-button [routerLink]="menu.redirect" routerLinkActive="active">{{ menu.name }}</a>
+  </nav>
+  <span class="example-spacer"></span>
+
+
+  <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
+    <mat-icon matBadgeColor="warn" matBadgeSize="small" [matBadge]="notificaciones.length">notifications</mat-icon>
+  </button>
+  
+  <mat-menu #notificationsMenu="matMenu">
+    <div class="notifications-container">
+      <div class="notification-header">
+        <h3>Notificaciones</h3>
+      </div>
+      <div *ngIf="notificaciones.length === 0; else notificationList">
+        <mat-icon>info</mat-icon>
+        No hay notificaciones
+      </div>
+      <ng-template #notificationList>
+        <div *ngFor="let notification of notificaciones" class="notification-item">
+          <mat-icon>notification_important</mat-icon>
+          <span>{{ notification.message }}</span>
+          <button mat-icon-button color="warn" (click)="removeNotification(notification)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </mat-menu>
+  
+
+
+  <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item routerLink="/login">Cerrar Sesión</button>
+  </mat-menu>
+
+</mat-toolbar>
+
+<!-- Responsive Menu -->
+<div class="responsive-menu" [class.show]="showResponsiveMenu">
+  <a *ngFor="let menu of menus" mat-list-item [routerLink]="menu.redirect" (click)="closeMenu()">{{ menu.name }}</a>
+</div>

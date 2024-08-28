@@ -1,0 +1,92 @@
+<main class="app_main">
+    <div class="div_formulario" *ngIf="!showModal">
+      <div class="mat-h1">¡Inscripción!</div>
+      <form [formGroup]="inscripcionForm" (ngSubmit)="submitForm()" id="formu_id">
+        <div>
+          <div class="row" id="row_info">
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>RUT</mat-label>
+                <input matInput type="text" formControlName="rut" (blur)="formatRut()">
+                <mat-error *ngIf="inscripcionForm.get('rut')?.hasError('rutInvalid')">
+                  RUT no válido
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>Correo Institucional</mat-label>
+                <input matInput type="email" formControlName="correo_inst">
+                <mat-error *ngIf="inscripcionForm.get('correo_inst')?.hasError('email')">
+                  Correo no válido
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <mat-checkbox formControlName="chkb">
+            ¿Tienes acuerdo previo con algún tutor?
+          </mat-checkbox>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>TUTOR</mat-label>
+            <mat-select formControlName="tutor">
+              <mat-option value="tutor1">Tutor1</mat-option>
+              <mat-option value="tutor2">Tutor2</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-checkbox formControlName="chkb">
+            ¿Tienes acuerdo previo con algún cotutor?
+          </mat-checkbox>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>COTUTOR</mat-label>
+            <mat-select formControlName="cotutor">
+              <mat-option value="cotutor1">Cotutor1</mat-option>
+              <mat-option value="cotutor2">Cotutor2</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>¿CUÁNTOS SEMESTRES DURA SU TRABAJO FINAL DE TITULACIÓN?</mat-label>
+            <mat-select formControlName="semestres">
+              <mat-option value="1">1 SEMESTRE</mat-option>
+              <mat-option value="2">2 SEMESTRES</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>¿CUENTA CON HÁBITOS DE ESTUDIOS O MÉTODOS DE PLANIFICACIÓN?</mat-label>
+            <input matInput type="text" formControlName="habitos">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>¿UTILIZA PLATAFORMAS DIGITALES PARA ESTOS FINES?</mat-label>
+            <input matInput type="text" formControlName="plataformas_dig">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>ESCRIBA EL TEMA DEL PROYECTO</mat-label>
+            <input matInput type="text" formControlName="tema">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>¿POR QUÉ ELIGIÓ ESTA ÁREA DE DESARROLLO PARA SU PROYECTO DE TITULACIÓN?</mat-label>
+            <input matInput type="text" formControlName="areadesallorro">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>¿POR QUÉ Y CÓMO ELIGIÓ SU TEMA PARA SU PROYECTO DE TITULACIÓN?</mat-label>
+            <input matInput type="text" formControlName="expl_tema">
+          </mat-form-field>
+  
+          <div id="btton_div">
+            <button mat-raised-button color="primary" type="submit" id="btton_reg" [disabled]="inscripcionForm.invalid">
+              INSCRIBIRSE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>

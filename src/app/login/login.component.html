@@ -1,0 +1,65 @@
+<div class="main-div">
+  <div class="login">
+    <div class="login-card mat-elevation-z8">
+      <img src="../../assets/logo_pucv.png" alt="" />
+      <div class="mat-h1">¡Bienvenido!</div>
+      <p class="caption">Sistema de gestión de proyectos</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required />
+          <mat-error *ngIf="loginForm.get('email')!.hasError('required')">
+            Email es obligatorio
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            type="button"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('password')!.hasError('required')">
+            Contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Perfil</mat-label>
+          <mat-select formControlName="profile" required>
+            <mat-option value="tutor">Tutor</mat-option>
+            <mat-option value="cotutor">Cotutor</mat-option>
+            <mat-option value="estudiante">Estudiante</mat-option>
+            <mat-option value="administrador">Administrador</mat-option>
+          </mat-select>
+          <mat-error *ngIf="loginForm.get('profile')!.hasError('required')">
+            Perfil es obligatorio
+          </mat-error>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="loginForm.invalid"
+        >
+          Iniciar Sesión
+        </button>
+      </form>
+      <hr class="separation">
+      <p class="text-center reset-pass" style="color: blue; cursor: pointer">
+        <a
+          routerLink="/create-account"
+          style="color: blue; text-decoration: none; font-size: 14px; font-weight: bold;"
+          >Crear Cuenta </a
+        >
+      </p>
+    </div>
+  </div>
+</div>

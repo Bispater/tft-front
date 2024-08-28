@@ -1,0 +1,111 @@
+<div class="main-div">
+    <div class="register-card mat-elevation-z8">
+      <div class="mat-h1">¡Crea tu Cuenta aquí!</div>
+      <!-- <p class="caption">Sistema de gestión de proyectos</p> -->
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-grid">
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="name" required>
+              <mat-error *ngIf="registerForm.get('name')!.hasError('required')">
+                Nombre es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Apellidos</mat-label>
+              <input matInput formControlName="lastname" required>
+              <mat-error *ngIf="registerForm.get('lastname')!.hasError('required')">
+                Apellidos son obligatorios
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>RUT</mat-label>
+              <input matInput formControlName="rut" required>
+              <mat-error *ngIf="registerForm.get('rut')!.hasError('required')">
+                RUT es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Perfil</mat-label>
+              <mat-select formControlName="profile" required>
+                <mat-option value="tutor">Tutor</mat-option>
+                <mat-option value="cotutor">Cotutor</mat-option>
+                <mat-option value="estudiante">Estudiante</mat-option>
+                <mat-option value="administrador">Administrador</mat-option>
+              </mat-select>
+              <mat-error *ngIf="registerForm.get('profile')!.hasError('required')">
+                Perfil es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Institución</mat-label>
+              <mat-select formControlName="institution" required>
+                <mat-option value="PUCV">PUCV</mat-option>
+              </mat-select>
+              <mat-error *ngIf="registerForm.get('institution')!.hasError('required')">
+                Institución es obligatoria
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!-- <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Facultad</mat-label>
+              <mat-select formControlName="faculty" required>
+                <mat-option value="ingenieria">Ingeniería</mat-option>
+              </mat-select>
+              <mat-error *ngIf="registerForm.get('faculty')!.hasError('required')">
+                Facultad es obligatoria
+              </mat-error>
+            </mat-form-field>
+          </div> -->
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Correo Institucional</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-error *ngIf="registerForm.get('email')!.hasError('required')">
+                Correo Institucional es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="registerForm.get('password')!.hasError('required')">
+                Contraseña es requerida
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="grid-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Reescribir Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="registerForm.hasError('passwordMismatch')">
+                Las contraseñas no coinciden
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Crear Cuenta</button>
+      </form>
+      <p class="text-center reset-pass pt-3" style="color: blue; cursor: pointer;">
+        <a routerLink="/login" style="color: blue; text-decoration: none;">Ya tengo cuenta</a>
+    </p>
+    </div>
+  </div>
+  

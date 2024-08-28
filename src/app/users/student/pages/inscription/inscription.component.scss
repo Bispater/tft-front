@@ -1,0 +1,67 @@
+.app_main {
+    background-color: #f8f9fa; // Fondo claro
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mat-h1 {
+    color: #194F7F;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+
+  .div_formulario {
+    width: 50%;
+    background-color: #ffffff; // Fondo blanco para el formulario
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .row {
+      margin-bottom: 1rem;
+    }
+  
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    mat-checkbox {
+      margin-bottom: 1rem;
+    }
+  
+    #btton_div {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+  
+      #btton_reg {
+        background-color: #DE9B23;
+        color: white;
+      }
+    }
+  }
+
+
+  // Responsivo
+  @media (max-width: 768px) {
+    .app_main {
+      padding: 3rem;
+    }
+    .div_formulario {
+        width: 70%;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .app_main {
+        padding: 5px;
+      }
+      .div_formulario {
+        width: 90%;
+      }
+  }
+  

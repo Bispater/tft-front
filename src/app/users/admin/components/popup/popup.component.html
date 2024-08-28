@@ -1,0 +1,17 @@
+<div class="pop-up">
+  <h1 mat-dialog-title>Asignar Tutor</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccionar Tutor</mat-label>
+      <mat-select [(value)]="selectedTutor">
+        <mat-option *ngFor="let tutor of tutors" [value]="tutor">{{
+          tutor
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="assignTutor()">Asignar</button>
+  </div>
+</div>
