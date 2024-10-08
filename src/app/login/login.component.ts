@@ -10,6 +10,7 @@ import { LoginService } from '../services/login.service';
 export class LoginComponent {
   loginForm: FormGroup;
   hide = true;
+  
   loading = false; 
   
   constructor(
